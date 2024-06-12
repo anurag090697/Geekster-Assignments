@@ -20,15 +20,15 @@ function App() {
     if (inputValue.trim()) {
       const newTasks = [...taskArr, { text: inputValue, completed: false }];
       setTask(newTasks);
-      localStorage.setItem("taskArr", JSON.stringify(newTasks)); // update localStorage immediately
-      setInputValue(""); // Clear the input after adding the item
+      localStorage.setItem("taskArr", JSON.stringify(newTasks)); 
+      setInputValue(""); 
     }
   };
 
   const deleteItem = (index) => {
     const newTaskArr = taskArr.filter((_, i) => i !== index);
     setTask(newTaskArr);
-    localStorage.setItem("taskArr", JSON.stringify(newTaskArr)); // update localStorage immediately
+    localStorage.setItem("taskArr", JSON.stringify(newTaskArr)); 
   };
 
   const toggleComplete = (index) => {
@@ -36,7 +36,7 @@ function App() {
       i === index ? { ...item, completed: !item.completed } : item
     );
     setTask(newTaskArr);
-    localStorage.setItem("taskArr", JSON.stringify(newTaskArr)); // update localStorage immediately
+    localStorage.setItem("taskArr", JSON.stringify(newTaskArr)); 
   };
 
   return (
